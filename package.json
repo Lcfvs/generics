@@ -1,6 +1,7 @@
 {
   "name": "@lcf.vs/generics",
-  "version": "0.3.0",
+  "version": "0.4.0",
+  "type": "module",
   "description": "Some useful JS generics",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
