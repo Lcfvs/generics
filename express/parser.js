@@ -1,7 +1,7 @@
 import parse from '@lcf.vs/generics/validation/parse.js'
 
 function parser (key, rules) {
-  return async ({ context, next, req: { [key]: data } }) => {
+  return async ({ context, next, request: { [key]: data } }) => {
     try {
       return {
         ...context,
