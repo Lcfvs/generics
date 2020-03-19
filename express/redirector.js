@@ -1,6 +1,6 @@
-export function redirector (location) {
+export function redirector () {
   return async ({ context, response }) => {
-    response.redirect(location)
+    response.redirect(context.location)
 
     return context
   }
