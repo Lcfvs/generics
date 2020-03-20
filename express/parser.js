@@ -1,11 +1,11 @@
 import parse from '@lcf.vs/generics/validation/parse.js'
 
-function parser (key, rules) {
+function parser (key, [...parsers]) {
   return async ({ context, next, request: { [key]: data } }) => {
     try {
       return {
         ...context,
-        [key]: await parse(rules, data)
+        [key]: await parse(parsers, data)
       }
     } catch (error) {
       next(Object.assign(error, {
@@ -18,7 +18,7 @@ function parser (key, rules) {
 }
 
 export const {
-  body = rules => parser('body', rules),
-  params = rules => parser('params', rules),
-  query = rules => parser('query', rules)
+  body = parsers => parser('body', parsers),
+  params = parsers => parser('params', parsers),
+  query = parsers => parser('query', parsers)
 } = {}

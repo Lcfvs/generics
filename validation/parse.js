@@ -1,7 +1,7 @@
-async function field ({ data, errors, fields }, [name, tests]) {
+async function field ({ data, errors, fields }, [name, parsers]) {
   const result = { data, errors, fields }
   try {
-    const [value] = await tests.reduce(test, [data[name], { ...fields }])
+    const [value] = await parsers.reduce(test, [data[name], { ...fields }])
 
     result.fields = {
       ...fields,
@@ -13,11 +13,11 @@ async function field ({ data, errors, fields }, [name, tests]) {
     result.errors = {
       ...errors,
       ...{
-        [name]: value
+        [name]: error
       }
     }
   }
-  
+
   return result
 }
 
@@ -30,13 +30,13 @@ async function test (promise, rule) {
   ]
 }
 
-export default async function parse ({ ...rules }, { ...data }) { 
-  const { errors, fields } = await Object.entries(rules)
+export default async function parse ({ ...parsers }, { ...data }) {
+  const { errors, fields } = await Object.entries(parsers)
     .reduce(field, {
       data,
       errors : {},
       fields : {}
-    }) 
+    })
 
   if (Object.keys(errors).length) {
     throw Object.assign(new Error('validation errors'), { errors } )
