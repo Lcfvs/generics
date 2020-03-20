@@ -1,6 +1,6 @@
 {
   "name": "@lcf.vs/generics",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "type": "module",
   "description": "Some useful JS generics",
   "scripts": {
@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/Lcfvs/generics/issues"
   },
-  "homepage": "https://github.com/Lcfvs/generics#readme"
+  "homepage": "https://github.com/Lcfvs/generics#readme",
+  "dependencies": {
+    "@lcf.vs/generics": "."
+  }
 }
