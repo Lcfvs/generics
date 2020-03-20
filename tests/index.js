@@ -6,7 +6,7 @@ function minString (min) {
   return async (value) => {
     const { length } = value
 
-    if (length >= min) {console.log(min)
+    if (length >= min) {
       return value
     }
 
