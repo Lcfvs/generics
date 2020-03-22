@@ -1,5 +1,5 @@
 import attempt from '@lcf.vs/generics/lib/express/attempt.js'
-import { query } from '@lcf.vs/generics/lib/express/parser.js'
+import { body, params, query } from '@lcf.vs/generics/lib/express/parser.js'
 import logger from '@lcf.vs/generics/lib/log/logger.js'
 
 function minString (min) {
@@ -30,6 +30,14 @@ const rules = {
 }
 
 const request = {
+  body: {
+    content: '12345',
+    content2: '12345'
+  },
+  params: {
+    content: '12345',
+    content2: '12345'
+  },
   query: {
     content: '12345',
     content2: '12345'
@@ -37,6 +45,8 @@ const request = {
 }
 
 const route = attempt([
+  body(rules),
+  params(rules),
   query(rules),
   logger()
 ])
