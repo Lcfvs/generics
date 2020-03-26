@@ -1,7 +1,6 @@
 {
   "name": "@lcf.vs/generics",
-  "version": "0.4.5",
-  "type": "module",
+  "version": "0.5.0",
   "description": "Some useful JS generics",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -21,6 +20,14 @@
   },
   "homepage": "https://github.com/Lcfvs/generics#readme",
   "dependencies": {
-    "@lcf.vs/generics": "."
+    "@lcf.vs/generics": ".",
+    "bluebird": "3.7.2",
+    "esm": "^3.2.25",
+    "knex": "^0.20.13",
+    "knex-hooks": "0.0.8",
+    "sqlite3": "4.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^13.9.3"
   }
 }
