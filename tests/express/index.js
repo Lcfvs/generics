@@ -14,10 +14,6 @@ function minString (min) {
   }
 }
 
-const response = {}
-
-const next = error => console.error(error)
-
 const rules = {
   content: [
     minString(5),
@@ -29,21 +25,6 @@ const rules = {
   ]
 }
 
-const request = {
-  body: {
-    content: '12345',
-    content2: '12345'
-  },
-  params: {
-    content: '12345',
-    content2: '12345'
-  },
-  query: {
-    content: '12345',
-    content2: '12345'
-  }
-}
-
 const route = attempt([
   body(rules),
   params(rules),
@@ -51,4 +32,22 @@ const route = attempt([
   logger()
 ])
 
-void route(request, response, next)
+// emulates a route(request, response, next) call
+void route(
+  {
+    body: {
+      content: '12345',
+      content2: '12345'
+    },
+    params: {
+      content: '12345',
+      content2: '12345'
+    },
+    query: {
+      content: '12345',
+      content2: '12345'
+    }
+  },
+  {},
+  error => console.error(error)
+)
