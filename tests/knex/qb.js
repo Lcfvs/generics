@@ -1,4 +1,4 @@
-import configure from '@lcf.vs/generics/lib/knex/qb.js'
+import configure from '../../lib/knex/qb.js'
 import data from '../../lib/knex/hooks/data.js'
 import rows from '../../lib/knex/hooks/rows.js'
 import statements from '../../lib/knex/hooks/statements.js'

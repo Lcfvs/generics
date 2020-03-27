@@ -1,27 +1,32 @@
-import attempt from '@lcf.vs/generics/lib/express/attempt.js'
-import { body, params, query } from '@lcf.vs/generics/lib/express/parser.js'
-import logger from '@lcf.vs/generics/lib/log/logger.js'
+import attempt from '../../lib/express/attempt.js'
+import { body, params, query } from '../../lib/express/parser.js'
+import logger from '../../lib/log/logger.js'
+import parsers from '../../lib/validation/parsers/index.js'
 
-function minString (min) {
-  return async (value) => {
-    const { length } = value
+const text = {
+  maxlength: 100,
+  minlength: 5,
+  type: parsers.string
+}
 
-    if (length >= min) {
-      return value
-    }
-
-    throw new Error(`Chaine trop courte (doit être supérieure ou égale à ${min} caractères)`)
-  }
+const absoluteInteger = {
+  max: 100,
+  min: 0,
+  step: 1,
+  type: parsers.number
 }
 
 const rules = {
-  content: [
-    minString(5),
-    minString(5)
+  text: [
+    text.type.type(),
+    text.type.maxlength(text),
+    text.type.minlength(text)
   ],
-  content2: [
-    minString(5),
-    minString(5)
+  absoluteInteger: [
+    absoluteInteger.type.type(),
+    absoluteInteger.type.max(absoluteInteger),
+    absoluteInteger.type.min(absoluteInteger),
+    absoluteInteger.type.step(absoluteInteger)
   ]
 }
 
@@ -36,16 +41,16 @@ const route = attempt([
 void route(
   {
     body: {
-      content: '12345',
-      content2: '12345'
+      text: '12345',
+      absoluteInteger: 10
     },
     params: {
-      content: '12345',
-      content2: '12345'
+      text: '12345',
+      absoluteInteger: 10
     },
     query: {
-      content: '12345',
-      content2: '12345'
+      text: '12345',
+      absoluteInteger: 10
     }
   },
   {},
