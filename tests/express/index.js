@@ -1,5 +1,4 @@
 import attempt from '../../lib/express/attempt.js'
-import { body, params, query } from '../../lib/express/parser.js'
 import hooks from '../../lib/express/hooks/index.js'
 import parsers from '../../lib/validation/parsers/index.js'
 
@@ -31,10 +30,10 @@ const rules = {
 }
 
 const route = attempt([
-  body(rules),
-  params(rules),
-  query(rules),
-  hooks.logger()
+  hooks.request.body(rules),
+  hooks.request.params(rules),
+  hooks.request.query(rules),
+  hooks.log.logger()
 ])
 
 // emulates a route(request, response, next) call
