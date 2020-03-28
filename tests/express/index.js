@@ -42,15 +42,15 @@ void route(
   {
     body: {
       text: '12345',
-      absoluteInteger: 10
+      absoluteInteger: '10'
     },
     params: {
       text: '12345',
-      absoluteInteger: 10
+      absoluteInteger: '10'
     },
     query: {
       text: '12345',
-      absoluteInteger: 10
+      absoluteInteger: '10'
     }
   },
   {},
