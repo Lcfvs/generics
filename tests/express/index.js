@@ -15,6 +15,13 @@ const absoluteInteger = {
   type: 'number'
 }
 
+const date = {
+  max: '2200-01-01T00:00',
+  min: '1990-01-01T00:00',
+  step: '1',
+  type: 'datetime'
+}
+
 const rules = {
   text: [
     parsers.string.type(),
@@ -26,6 +33,12 @@ const rules = {
     parsers.number.max(absoluteInteger),
     parsers.number.min(absoluteInteger),
     parsers.number.step(absoluteInteger)
+  ],
+  date: [
+    parsers.datetime.type(),
+    parsers.datetime.max(date),
+    parsers.datetime.min(date),
+    parsers.datetime.step(date)
   ]
 }
 
@@ -41,15 +54,18 @@ void route(
   {
     body: {
       text: '12345',
-      absoluteInteger: '10'
+      absoluteInteger: '10',
+      date: '1990-02-01T00:00'
     },
     params: {
       text: '12345',
-      absoluteInteger: '10'
+      absoluteInteger: '10',
+      date: '1990-02-01T00:00'
     },
     query: {
       text: '12345',
-      absoluteInteger: '10'
+      absoluteInteger: '10',
+      date: '1990-02-01T00:00'
     }
   },
   {},
