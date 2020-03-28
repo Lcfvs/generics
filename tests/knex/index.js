@@ -21,4 +21,5 @@ import qb from './qb.js'
     .orderBy('start')
 
   console.log({ id, results })
+  process.exit(0)
 })()

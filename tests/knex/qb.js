@@ -1,7 +1,5 @@
 import configure from '../../lib/knex/qb.js'
-import data from '../../lib/knex/hooks/data.js'
-import rows from '../../lib/knex/hooks/rows.js'
-import statements from '../../lib/knex/hooks/statements.js'
+import hooks from '../../lib/knex/hooks/hooks.js'
 
 const config = {
   client: 'sqlite3',
@@ -19,12 +17,12 @@ const config = {
 
 const qb = configure(config)
 
-qb.addHook('before', 'select', '*', statements(qb))
-qb.addHook('after', 'select', '*', rows(qb))
-qb.addHook('before', 'insert', '*', data(qb))
-qb.addHook('before', 'insert', '*', statements(qb))
-qb.addHook('before', 'update', '*', data(qb))
-qb.addHook('before', 'update', '*', statements(qb))
-qb.addHook('before', 'delete', '*', statements(qb))
+qb.addHook('before', 'select', '*', hooks.statements(qb))
+qb.addHook('after', 'select', '*', hooks.rows(qb))
+qb.addHook('before', 'insert', '*', hooks.data(qb))
+qb.addHook('before', 'insert', '*', hooks.statements(qb))
+qb.addHook('before', 'update', '*', hooks.data(qb))
+qb.addHook('before', 'update', '*', hooks.statements(qb))
+qb.addHook('before', 'delete', '*', hooks.statements(qb))
 
 export default qb

@@ -1,17 +1,17 @@
 import attempt from '../../lib/express/attempt.js'
-import hooks from '../../lib/express/hooks/index.js'
-import parsers from '../../lib/validation/parsers/index.js'
+import hooks from '../../lib/express/hooks/hooks.js'
+import parsers from '../../lib/validation/parsers/parsers.js'
 
 const text = {
-  maxlength: 100,
-  minlength: 5,
+  maxlength: '100',
+  minlength: '5',
   type: 'text'
 }
 
 const absoluteInteger = {
-  max: 100,
-  min: 0,
-  step: 1,
+  max: '100',
+  min: '0',
+  step: '1',
   type: 'number'
 }
 
