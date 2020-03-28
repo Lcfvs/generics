@@ -6,27 +6,27 @@ import parsers from '../../lib/validation/parsers/index.js'
 const text = {
   maxlength: 100,
   minlength: 5,
-  type: parsers.string
+  type: 'text'
 }
 
 const absoluteInteger = {
   max: 100,
   min: 0,
   step: 1,
-  type: parsers.number
+  type: 'number'
 }
 
 const rules = {
   text: [
-    text.type.type(),
-    text.type.maxlength(text),
-    text.type.minlength(text)
+    parsers.string.type(),
+    parsers.string.maxlength(text),
+    parsers.string.minlength(text)
   ],
   absoluteInteger: [
-    absoluteInteger.type.type(),
-    absoluteInteger.type.max(absoluteInteger),
-    absoluteInteger.type.min(absoluteInteger),
-    absoluteInteger.type.step(absoluteInteger)
+    parsers.number.type(),
+    parsers.number.max(absoluteInteger),
+    parsers.number.min(absoluteInteger),
+    parsers.number.step(absoluteInteger)
   ]
 }
 
