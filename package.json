@@ -1,9 +1,11 @@
 {
   "name": "@lcf.vs/generics",
-  "version": "0.16.1",
+  "version": "1.0.0-alpha-001",
   "type": "module",
   "description": "Some useful JS generics",
   "scripts": {
+    "knex": "babel-node node_modules/.bin/knex.cmd",
+    "migrate": "npm run knex -- migrate:latest",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

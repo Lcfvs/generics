@@ -1,25 +1,27 @@
-import qb from './qb.js'
+import saveEntity from '../../lib/express/hooks/knex/saveEntity.js'
+import context from './context.js'
 
-(async () => {
-  await qb.migrate.latest()
+const save = saveEntity({
+  ...context,
+  table: 'events'
+})
 
-  const [id] = await qb('events')
-    .insert({
-      content: 'test2',
-      end: new Date(),
-      start: new Date()
+void (async () => {
+  try {
+    const { entity } = await save({
+      context: {
+        body: {
+          content: 'test',
+          endDate: new Date(),
+          startDate: new Date()
+        }
+      }
     })
 
-  const results = await qb('events')
-    .where({
-      archivedAt: null
-    })
-    .andWhereBetween('start', [
-      new Date(Date.now() - 10000),
-      new Date(Date.now() + 10000)
-    ])
-    .orderBy('start')
+    console.log(entity)
+  } catch (error) {
+    console.error(error)
+  }
 
-  console.log({ id, results })
   process.exit(0)
 })()

@@ -16,29 +16,29 @@ const absoluteInteger = {
 }
 
 const date = {
-  max: '2200-01-01T00:00',
-  min: '1990-01-01T00:00',
+  max: '2200-01-01T00:00:00',
+  min: '1900-01-01T00:00:00',
   step: '1',
   type: 'datetime'
 }
 
 const rules = {
   text: [
-    parsers.string.type(),
-    parsers.string.maxlength(text),
-    parsers.string.minlength(text)
+    parsers.w3c.string.type(),
+    parsers.w3c.string.maxlength(text),
+    parsers.w3c.string.minlength(text)
   ],
   absoluteInteger: [
-    parsers.number.type(),
-    parsers.number.max(absoluteInteger),
-    parsers.number.min(absoluteInteger),
-    parsers.number.step(absoluteInteger)
+    parsers.w3c.number.type(),
+    parsers.w3c.number.max(absoluteInteger),
+    parsers.w3c.number.min(absoluteInteger),
+    parsers.w3c.number.step(absoluteInteger)
   ],
   date: [
-    parsers.datetime.type(),
-    parsers.datetime.max(date),
-    parsers.datetime.min(date),
-    parsers.datetime.step(date)
+    parsers.w3c.datetime.type(date),
+    parsers.w3c.datetime.max(date),
+    parsers.w3c.datetime.min(date),
+    parsers.w3c.datetime.step(date)
   ]
 }
 
@@ -53,19 +53,19 @@ const route = attempt([
 void route(
   {
     body: {
-      text: '12345',
+      text: 'abcde',
       absoluteInteger: '10',
-      date: '1990-02-01T00:00'
+      date: '1900-02-01T00:00:00'
     },
     params: {
-      text: '12345',
+      text: 'abcde',
       absoluteInteger: '10',
-      date: '1990-02-01T00:00'
+      date: '1990-02-01T00:00:00'
     },
     query: {
-      text: '12345',
+      text: 'abcde',
       absoluteInteger: '10',
-      date: '1990-02-01T00:00'
+      date: '1990-02-01T00:00:00'
     }
   },
   {},

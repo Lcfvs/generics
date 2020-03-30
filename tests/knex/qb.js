@@ -7,22 +7,31 @@ const config = {
     filename: './tests/knex/db.sqlite3'
   },
   migrations: {
-    directory: './tests/knex/migrations'
+    directory: './migrations'
   },
   seeds: {
-    directory: './tests/knex/seeds'
+    directory: './seeds'
   },
   useNullAsDefault: true
 }
 
 const qb = configure(config)
 
-qb.addHook('before', 'select', '*', hooks.statements(qb))
-qb.addHook('after', 'select', '*', hooks.rows(qb))
-qb.addHook('before', 'insert', '*', hooks.data(qb))
-qb.addHook('before', 'insert', '*', hooks.statements(qb))
-qb.addHook('before', 'update', '*', hooks.data(qb))
-qb.addHook('before', 'update', '*', hooks.statements(qb))
-qb.addHook('before', 'delete', '*', hooks.statements(qb))
+const context = {
+  qb
+}
+
+qb.addHook('before', 'select', '*', hooks.statements(context))
+qb.addHook('before', 'select', '*', hooks.archivedDate(context))
+qb.addHook('after', 'select', '*', hooks.rows(context))
+qb.addHook('before', 'insert', '*', hooks.id(context))
+qb.addHook('before', 'insert', '*', hooks.createdDate(context))
+qb.addHook('before', 'insert', '*', hooks.data(context))
+qb.addHook('before', 'insert', '*', hooks.statements(context))
+qb.addHook('before', 'update', '*', hooks.id(context))
+qb.addHook('before', 'update', '*', hooks.updatedDate(context))
+qb.addHook('before', 'update', '*', hooks.data(context))
+qb.addHook('before', 'update', '*', hooks.statements(context))
+qb.addHook('before', 'delete', '*', hooks.statements(context))
 
 export default qb

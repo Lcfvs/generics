@@ -1,5 +1,4 @@
 .idea
 node_modules
-tests/knex/migrations/db.sqlite3
 @types
 tsconfig.json
