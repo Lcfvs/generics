@@ -2,16 +2,21 @@ import parsers from '../../../../lib/validation/parsers/parsers.js'
 import columns from './columns/columns.js'
 
 export default {
-  get: {
+  archive: {
     params: {
       id: [
         parsers.misc.required(),
         ...columns.id
       ]
+    },
+    query: {
+      confirmation: [
+        parsers.misc.required(),
+        parsers.w3c.boolean.type()
+      ]
     }
   },
-  list: {},
-  post: {
+  create: {
     body: {
       content: [
         parsers.misc.required(),
@@ -26,6 +31,25 @@ export default {
         ...columns.endDate
       ]
     }
+  },
+  delete: {
+    params: {
+      id: [
+        parsers.misc.required(),
+        ...columns.id
+      ]
+    }
+  },
+  find: {
+    params: {
+      id: [
+        parsers.misc.required(),
+        ...columns.id
+      ]
+    }
+  },
+  search: {
+    query: {}
   },
   update: {
     body: {
@@ -42,28 +66,6 @@ export default {
         ...columns.endDate
       ]
     },
-    params: {
-      id: [
-        parsers.misc.required(),
-        ...columns.id
-      ]
-    }
-  },
-  archive: {
-    params: {
-      id: [
-        parsers.misc.required(),
-        ...columns.id
-      ]
-    },
-    query: {
-      confirmation: [
-        parsers.misc.required(),
-        parsers.w3c.boolean.type()
-      ]
-    }
-  },
-  delete: {
     params: {
       id: [
         parsers.misc.required(),

@@ -8,22 +8,22 @@ const context = entities.events.id.context
 export default {
   archive: [
     ...hooks.request.input.all(events.archive),
-    hooks.knex.archiveEntity(context),
-    hooks.log.logger()
+    hooks.knex.archiveEntity(context)
   ],
-  get: [
-    ...hooks.request.input.all(events.get),
-    hooks.knex.isEntity(context),
-    hooks.log.logger()
+  create: [
+    ...hooks.request.input.all(events.create),
+    hooks.knex.saveEntity(context)
   ],
-  post: [
-    ...hooks.request.input.all(events.post),
-    hooks.knex.saveEntity(context),
-    hooks.log.logger()
+  find: [
+    ...hooks.request.input.all(events.find),
+    hooks.knex.getEntity(context)
+  ],
+  search: [
+    ...hooks.request.input.all(events.search),
+    hooks.knex.searchEntities(context)
   ],
   update: [
     ...hooks.request.input.all(events.update),
-    hooks.knex.saveEntity(context),
-    hooks.log.logger()
+    hooks.knex.saveEntity(context)
   ]
 }
