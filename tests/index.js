@@ -1,4 +1,5 @@
 import routes from './routes/routes.js'
+import exit from './utils/exit.js'
 import next from './utils/next.js'
 
 const response = {}
@@ -50,4 +51,5 @@ Promise.resolve()
     response,
     next
   ))
+  .then(exit)
   .catch(next)
