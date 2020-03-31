@@ -1,5 +1,5 @@
 import parsers from '../../../../lib/validation/parsers/parsers.js'
-import columns from './columns/columns.js'
+import columns from './columns.js'
 
 export default {
   archive: {
