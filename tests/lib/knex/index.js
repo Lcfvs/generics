@@ -1,4 +1,4 @@
-import saveEntity from '../../lib/express/hooks/knex/saveEntity.js'
+import saveEntity from '../../../lib/express/hooks/knex/saveEntity.js'
 import context from './context.js'
 
 const save = saveEntity({

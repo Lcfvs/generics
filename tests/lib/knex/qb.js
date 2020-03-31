@@ -1,21 +1,8 @@
-import configure from '../../lib/knex/qb.js'
-import hooks from '../../lib/knex/hooks/hooks.js'
+import configure from '../../../lib/knex/qb.js'
+import hooks from '../../../lib/knex/hooks/hooks.js'
+import { development } from '../../knexfile.js'
 
-const config = {
-  client: 'sqlite3',
-  connection: {
-    filename: './tests/knex/db.sqlite3'
-  },
-  migrations: {
-    directory: './migrations'
-  },
-  seeds: {
-    directory: './seeds'
-  },
-  useNullAsDefault: true
-}
-
-const qb = configure(config)
+const qb = configure(development)
 
 const context = {
   qb
