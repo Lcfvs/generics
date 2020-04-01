@@ -11,19 +11,19 @@ export default {
     }
   },
   createdDate: {
-    min: '1970-01-01T00:00:00',
+    min: '1970-01-01T00:00',
     required: '',
     step: '1',
     type: 'datetime'
   },
   updatedDate: {
-    min: '1970-01-01T00:00:00',
+    min: '1970-01-01T00:00',
     step: '1',
     type: 'datetime',
     value: ''
   },
   archivedDate: {
-    min: '1970-01-01T00:00:00',
+    min: '1970-01-01T00:00',
     step: '1',
     type: 'datetime',
     value: null
@@ -35,14 +35,14 @@ export default {
     type: 'text'
   },
   startDate: {
-    min: '1970-01-01T00:00:00',
+    min: '1970-01-01T00:00',
     required: '',
     step: '1',
     type: 'datetime',
     value: null
   },
   endDate: {
-    min: '1970-01-01T00:00:00',
+    min: '1970-01-01T00:00',
     required: '',
     step: '1',
     type: 'datetime',
