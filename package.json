@@ -1,6 +1,6 @@
 {
   "name": "@lcf.vs/generics",
-  "version": "1.0.0-alpha-014",
+  "version": "1.0.0-alpha-015",
   "type": "module",
   "description": "Some useful JS generics",
   "scripts": {
@@ -29,6 +29,11 @@
     "sqlite3": "^4.1.1"
   },
   "devDependencies": {
-    "@types/node": "^13.9.4"
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1"
   }
 }

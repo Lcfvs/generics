@@ -1,14 +1,16 @@
 import parsers from '../../../../lib/validation/parsers/parsers.js'
 import entities from '../../entities/entities.js'
 
-const { events: {
-  content,
-  createdDate,
-  endDate,
-  id,
-  startDate,
-  updatedDate
-} } = entities
+const {
+  events: {
+    content,
+    createdDate,
+    endDate,
+    id,
+    startDate,
+    updatedDate
+  }
+} = entities
 
 export default {
   content: [

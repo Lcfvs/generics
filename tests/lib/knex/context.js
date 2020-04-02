@@ -1,7 +1,7 @@
-import configure from '../../../lib/knex/qb.js'
 import hooks from '../../../lib/knex/hooks/hooks.js'
-import * as knexfile from '../../knexfile.js'
+import configure from '../../../lib/knex/qb.js'
 import env from '../../bootstrap.js'
+import * as knexfile from '../../knexfile.js'
 
 const qb = configure(knexfile[env.NODE_ENV])
 
