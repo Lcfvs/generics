@@ -1,14 +1,18 @@
 import configure from '../../../lib/knex/qb.js'
 import hooks from '../../../lib/knex/hooks/hooks.js'
-import { development } from '../../knexfile.js'
+import * as knexfile from '../../knexfile.js'
+import env from '../../bootstrap.js'
 
-const qb = configure(development)
+const qb = configure(knexfile[env.NODE_ENV])
 
 const context = Object.freeze({
   archivedDate: 'archivedDate',
   createdDate: 'createdDate',
   id: 'id',
   updatedDate: 'updatedDate',
+  entities: {
+    events: () => 'events'
+  },
   qb
 })
 

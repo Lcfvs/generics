@@ -7,7 +7,7 @@ export default {
     type: 'number',
     context: {
       ...context,
-      table: 'events'
+      table: context.entities.events()
     }
   },
   createdDate: {
