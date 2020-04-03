@@ -125,12 +125,11 @@ export default {
           route: route.route,
           url
         },
-        {
-          ...response,
+        Object.assign(Object.create(response), {
           body,
           headers: {},
           method
-        },
+        }),
         next
       ])
     }

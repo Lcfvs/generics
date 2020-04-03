@@ -19,33 +19,33 @@ async function test () {
 
   console.log({ created: response })
 
-  response = await fetch(`/events/update/${response.id}`, {
+  response = await fetch(`/events/update/${response.body.id}`, {
     body: {
-      content: `${response.content} (updated)`,
+      content: `${response.body.content} (updated)`,
       startDate: date.toW3CDatetime(new Date(), true),
       endDate: date.toW3CDatetime(date.addDays(new Date(), 1), true)
     },
     method: 'post',
     params: {
-      id: `${response.id}`
+      id: `${response.body.id}`
     }
   })
 
   console.log({ updated: response })
 
-  response = await fetch(`/events/find/${response.id}`, {
+  response = await fetch(`/events/find/${response.body.id}`, {
     method: 'get',
     params: {
-      id: `${response.id}`
+      id: `${response.body.id}`
     }
   })
 
   console.log({ found: response })
 
-  response = await fetch(`/events/archive/${response.id}`, {
+  response = await fetch(`/events/archive/${response.body.id}`, {
     method: 'get',
     params: {
-      id: `${response.id}`
+      id: `${response.body.id}`
     },
     query: {
       confirmation: '1'
@@ -57,7 +57,7 @@ async function test () {
   response = await fetch('/events/search', {
     method: 'get',
     params: {
-      content: `${response.content}`
+      content: `${response.body.content}`
     },
     query: {
       confirmation: '1'

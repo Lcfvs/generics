@@ -8,5 +8,5 @@ export default async function fetch (url, {
 }) {
   const { response } = await app.respond({ body, headers, method, query, url })
 
-  return response.body
+  return response
 }
