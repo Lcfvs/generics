@@ -38,6 +38,12 @@ export default {
         parsers.misc.required(),
         ...columns.id
       ]
+    },
+    query: {
+      confirmation: [
+        parsers.misc.required(),
+        parsers.w3c.boolean.type()
+      ]
     }
   },
   find: {
@@ -49,7 +55,11 @@ export default {
     }
   },
   search: {
-    query: {}
+    query: {
+      content: [
+        ...columns.content
+      ]
+    }
   },
   update: {
     body: {

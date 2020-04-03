@@ -28,7 +28,7 @@ Then link it to the parent module
 ### 4# Create your route hooks
 
 #### Example
-[project/lib/hooks/{name}/{name}.js](./tests/lib/hooks/events/events.js)
+[project/lib/hooks/{name}/{name}.js](tests/lib/hooks/events/events.js)
 
 Then link it to the parent module
 
@@ -36,7 +36,7 @@ Then link it to the parent module
 ### 5# Register your routes
 
 #### Example
-[project/routes/routes.js](./tests/routes/routes.js)
+[project/routes/routes.js](tests/routes/routes.js)
 
 
 ## Test it
