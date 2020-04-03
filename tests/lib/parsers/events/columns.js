@@ -23,8 +23,7 @@ export default {
     ...parsers.w3c.datetime.all(endDate)
   ],
   id: [
-    ...parsers.w3c.number.all(id),
-    ...parsers.knex.all(id.context)
+    ...parsers.w3c.number.all(id)
   ],
   startDate: [
     ...parsers.w3c.datetime.all(startDate)

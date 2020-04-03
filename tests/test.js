@@ -1,4 +1,5 @@
 import process from 'process'
+import './bootstrap.js'
 import './utils/app.js'
 import './routes/routes.js'
 import date from '../lib/types/date/date.js'

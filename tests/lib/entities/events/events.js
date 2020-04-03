@@ -1,14 +1,8 @@
-import context from '../../knex/context.js'
-
 export default {
   id: {
     min: '1',
     step: '1',
-    type: 'number',
-    context: {
-      ...context,
-      table: context.entities.events()
-    }
+    type: 'number'
   },
   createdDate: {
     min: '1970-01-01T00:00',

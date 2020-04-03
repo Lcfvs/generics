@@ -11,7 +11,10 @@ const context = Object.freeze({
   id: 'id',
   updatedDate: 'updatedDate',
   entities: {
-    events: () => 'events'
+    events: () => ({
+      ...context,
+      table: 'events'
+    })
   },
   qb
 })
