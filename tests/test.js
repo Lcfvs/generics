@@ -1,9 +1,11 @@
 import process from 'process'
 import './bootstrap.js'
-import './utils/app.js'
-import './routes/routes.js'
+import app from './utils/app.js'
+import routes from './routes/routes.js'
 import date from '../lib/types/date/date.js'
 import fetch from './utils/fetch.js'
+
+routes(app)
 
 async function test () {
   let response
