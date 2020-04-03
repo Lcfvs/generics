@@ -2,6 +2,7 @@ import hooks from '../../../lib/knex/hooks/hooks.js'
 import configure from '../../../lib/knex/qb.js'
 import env from '../../bootstrap.js'
 import * as knexfile from '../../knexfile.js'
+import entities from '../entities/entities.js'
 
 const qb = configure(knexfile[env.NODE_ENV])
 
@@ -10,12 +11,13 @@ const context = Object.freeze({
   createdDate: 'createdDate',
   id: 'id',
   updatedDate: 'updatedDate',
-  entities: {
-    events: () => ({
+  entities: Object.keys(entities).reduce((entities, table) => ({
+    ...entities,
+    [table]: () => ({
       ...context,
-      table: 'events'
+      table
     })
-  },
+  }), {}),
   qb
 })
 
