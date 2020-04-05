@@ -1,6 +1,6 @@
 {
   "name": "@lcf.vs/generics",
-  "version": "1.0.0-alpha-024",
+  "version": "1.0.0-alpha-026",
   "type": "module",
   "description": "Some useful JS generics",
   "scripts": {
@@ -21,10 +21,8 @@
   },
   "homepage": "https://github.com/Lcfvs/generics#readme",
   "dependencies": {
-    "bluebird": "^3.7.2",
     "knex": "^0.20.13",
-    "knex-hooks": "^0.0.8",
-    "sqlite3": "^4.1.1"
+    "knex-hooks": "^0.0.8"
   },
   "devDependencies": {
     "@lcf.vs/generics-tests": "https://github.com/Lcfvs/generics-tests/tarball/master",

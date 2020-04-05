@@ -1,42 +1,16 @@
 # @lcf.vs/generics
 
-
-## Building
-
-### 1# Create your entities
-
-#### Example
-[project/lib/entities/{name}/{name}.js](https://github.com/Lcfvs/generics-tests/lib/entities/events/events.js)
-
-Then link it to the parent module
+**[ALPHA]** Some useful JS generics
 
 
-### 2# Create your entity column parsers
+## Install
 
-#### Example
-[project/lib/parsers/{name}/columns.js](https://github.com/Lcfvs/generics-tests/lib/parsers/events/columns.js)
-
-
-### 3# Create your entity route specific parsers
-
-#### Example
-[project/lib/parsers/{name}/{name}.js](https://github.com/Lcfvs/generics-tests/lib/parsers/events/events.js)
-
-Then link it to the parent module
+`npm i https://github.com/Lcfvs/generics-tests/tarball/master`
 
 
-### 4# Create your route hooks
+## Example
 
-#### Example
-[project/lib/hooks/{name}/{name}.js](https://github.com/Lcfvs/generics-tests/lib/hooks/events/events.js)
-
-Then link it to the parent module
-
-
-### 5# Register your routes
-
-#### Example
-[project/routes/routes.js](https://github.com/Lcfvs/generics-tests/routes/routes.js)
+[@lcf.vs/generics-tests](https://github.com/Lcfvs/generics-tests)
 
 
 ## Test it
