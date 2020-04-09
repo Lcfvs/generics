@@ -1,6 +1,6 @@
 {
   "name": "@lcf.vs/generics",
-  "version": "1.0.0-alpha-039",
+  "version": "1.0.0-alpha-036",
   "type": "module",
   "description": "Some useful JS generics",
   "scripts": {
@@ -25,6 +25,7 @@
     "knex-hooks": "^0.0.8"
   },
   "devDependencies": {
+    "@lcf.vs/generics-tests": "latest",
     "eslint": "^6.8.0",
     "eslint-config-standard": "^14.1.1",
     "eslint-plugin-import": "^2.20.2",
