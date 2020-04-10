@@ -1,11 +1,13 @@
 # @lcf.vs/generics
 
-**[ALPHA]** Some useful JS generics
+**[ALPHA]** Some useful JS generics, using:
+ - [knex](https://www.npmjs.com/package/knex)
+ - [express](https://www.npmjs.com/package/express) (or any express-like router)
 
 
 ## Install
 
-`npm i https://github.com/Lcfvs/generics-tests/tarball/master`
+`npm i @lcf.vs/generics`
 
 
 ## Example
@@ -15,7 +17,7 @@
 
 ## Test it
 
-`npm test`
+`npm test @lcf.vs/generics`
 
 
 ## License
