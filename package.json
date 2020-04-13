@@ -1,8 +1,11 @@
 {
   "name": "@lcf.vs/generics",
-  "version": "1.0.0-alpha-046",
+  "version": "1.0.0-alpha-047",
   "type": "module",
   "description": "Some useful JS generics",
+  "engines": {
+    "node": ">=13.7"
+  },
   "scripts": {
     "test": "node ./node_modules/@lcf.vs/generics-tests/test.js"
   },
@@ -22,7 +25,8 @@
   "homepage": "https://github.com/Lcfvs/generics#readme",
   "dependencies": {
     "knex": "^0.20.13",
-    "knex-hooks": "^0.0.8"
+    "knex-hooks": "^0.0.8",
+    "process": "latest"
   },
   "devDependencies": {
     "@lcf.vs/generics-tests": "latest",
@@ -31,7 +35,6 @@
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.1",
-    "process": "latest"
+    "eslint-plugin-standard": "^4.0.1"
   }
 }
