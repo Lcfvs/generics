@@ -1,6 +1,6 @@
 {
   "name": "@lcf.vs/generics",
-  "version": "1.0.0-alpha-064",
+  "version": "1.0.0-alpha-065",
   "type": "module",
   "description": "Some useful JS generics",
   "engines": {
